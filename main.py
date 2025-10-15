@@ -10,7 +10,7 @@ app = FastAPI(
 )
 
 # Load the trained model
-with open(r"D:\Ml_pipeline dd\model.pkl", "rb") as f:
+with open(r"model.pkl", "rb") as f:
     model = pickle.load(f)
 
 # Root endpoint
@@ -41,4 +41,5 @@ def model_predict(water: water):
     if predicted_value == 1:
         return {"prediction": "Water is consumable"}
     else:
+
         return {"prediction": "Water is not consumable"}
